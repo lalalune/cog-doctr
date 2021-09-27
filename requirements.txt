@@ -1,2 +1,3 @@
 -e git+https://github.com/mindee/doctr.git#egg=doctr
 tensorflow
+tensorflow-addons
