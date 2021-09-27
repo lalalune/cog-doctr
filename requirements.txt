@@ -1,1 +1,1 @@
-python-doctr[tf]
+pip install git+https://github.com/mindee/doctr/python-doctr.git[tf]
