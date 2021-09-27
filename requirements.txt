@@ -1,2 +1,2 @@
-git+https://github.com/mindee/doctr/python-doctr.git
+-e git+https://github.com/mindee/doctr/python-doctr.git#egg=python-doctr
 tensorflow
