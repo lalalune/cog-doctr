@@ -1,1 +1,1 @@
-pip install git+https://github.com/mindee/doctr/python-doctr.git[tf]
+git+https://github.com/mindee/doctr/python-doctr.git[tf]
