@@ -1,16 +1,29 @@
-import os 
-import cv2
-import streamlit as st
-import tensorflow as tf
+# Copyright (C) 2021, Mindee.
+
+# This program is licensed under the Apache License version 2.
+# See LICENSE or go to <https://www.apache.org/licenses/LICENSE-2.0.txt> for full license details.
+
+import os
+
 import matplotlib.pyplot as plt
+import streamlit as st
+
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+
+import cv2
+import tensorflow as tf
+
+gpu_devices = tf.config.experimental.list_physical_devices('GPU')
+if any(gpu_devices):
+    tf.config.experimental.set_memory_growth(gpu_devices[0], True)
 
 from doctr.io import DocumentFile
 from doctr.models import ocr_predictor
 from doctr.utils.visualization import visualize_page
 
+DET_ARCHS = ["db_resnet50", "db_mobilenet_v3_large"]
+RECO_ARCHS = ["crnn_vgg16_bn", "crnn_mobilenet_v3_small", "master", "sar_resnet31"]
 
-DET_ARCHS = ['db_resnet50', 'db_mobilenet_v3_large', 'linknet16']
-RECO_ARCHS = ["crnn_vgg16_bn", "master", "sar_resnet31"]
 
 def main():
 
@@ -18,10 +31,10 @@ def main():
     st.set_page_config(layout="wide")
 
     # Designing the interface
-    st.title("DocTR: Document Text Recognition")
+    st.title("docTR: Document Text Recognition")
     # For newline
     st.write('\n')
-    # 
+    #
     st.write('Find more info at: https://github.com/mindee/doctr')
     # For newline
     st.write('\n')
