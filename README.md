@@ -1,6 +1,6 @@
 ---
-title: Doctr
-emoji: 📈
+title: docTR
+emoji: 📑
 colorFrom: purple
 colorTo: pink
 sdk: streamlit
